@@ -3,7 +3,7 @@
 		<h3 class="text-center mb-3">User Signup</h3>
 <!--uses EJS (Embedded JavaScript) to display error messages dynamically in an HTML form.-->
 		<% if(typeof errors != 'undefined') { %>
-<!--This checks if the errors variable is defined. If there are any errors (e.g., validation issues from a form submission), it enters the block.-->
+//This checks if the errors variable is defined. If there are any errors (e.g., validation issues from a form submission), it enters the block.-->
 			<% errors.forEach(function(error) { %>
 <!--This loops through each error in the errors array. errors is typically an array of error objects, where each object contains details about a specific error, such as msg for the error message.-->
 				<div class="alert alert-danger alert-dismissible fade show" role="alert">
