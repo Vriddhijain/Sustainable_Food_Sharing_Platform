@@ -5,16 +5,16 @@
 		<% if(typeof errors != 'undefined') { %>
 //This checks if the errors variable is defined. If there are any errors (e.g., validation issues from a form submission), it enters the block.-->
 			<% errors.forEach(function(error) { %>
-<!--This loops through each error in the errors array. errors is typically an array of error objects, where each object contains details about a specific error, such as msg for the error message.-->
+//This loops through each error in the errors array. errors is typically an array of error objects, where each object contains details about a specific error, such as msg for the error message.-->
 				<div class="alert alert-danger alert-dismissible fade show" role="alert">
-<!--This line adds a Bootstrap alert styled as "danger," meaning it will be displayed in red. The alert-dismissible class allows the alert to be closed by the user with a close button.-->
+//This line adds a Bootstrap alert styled as "danger," meaning it will be displayed in red. The alert-dismissible class allows the alert to be closed by the user with a close button.-->
 					<%= error.msg %>
-<!--For each error, this will display the specific error message (error.msg) inside a Bootstrap alert box.-->
+//For each error, this will display the specific error message (error.msg) inside a Bootstrap alert box.-->
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-<!--This adds a close button to the alert, allowing users to dismiss the error message after they see it.-->
+//This adds a close button to the alert, allowing users to dismiss the error message after they see it.-->
 				</div>
 			<% }); %>
-<!--This closes the loop that iterates over all the errors.-->
+//This closes the loop that iterates over all the errors.-->
 		<% } %>
 <!--This marks the end of the if statement, meaning that if there were no errors, nothing would be rendered.-->
 		
