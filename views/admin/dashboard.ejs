@@ -1,5 +1,6 @@
 <main>
 	<%- include('../partials/adminSidebar') %>
+<!--This includes the sidebar component for easy navigation across the admin panel.-->
 	
 	<div id="main-wrapper">
 		
@@ -7,8 +8,11 @@
 			<span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
 			<h5 class="m-0 color-theme d-inline-block">Dashboard</h5>
 		</div>
+<!--The main wrapper contains the dashboard content, with a header that has a sidebar toggle button and the page title ("Dashboard").-->
 		
 		<div class="d-flex gap-3 flex-wrap m-4 text-white">
+<!--A flexible container using Bootstrap's d-flex, gap-3, and flex-wrap classes for responsive, spaced elements.
+Each card displays key statistics with dynamic values passed from the server-side (numAdmins, numDonors, etc.).-->
 			
 			<div class="bg-primary rounded p-3" style="width: 250px;">
 				<div class="fs-1"><%= numAdmins %></div>
@@ -44,6 +48,10 @@
 				<div class="fs-1"><%= numCollectedDonations %></div>
 				<div class="fs-5">donations collected</div>
 			</div>
+<!--bg-primary, bg-success, bg-warning, bg-danger: Bootstrap color classes for different sections (blue for admins/agents, green for donors, yellow for donations to be assigned, red for not collected donations).
+rounded: Rounds the corners of each card.
+p-3: Adds padding around the content.
+fs-1, fs-5: Controls the font sizes for the numbers and labels, respectively.-->
 			
 		</div>
 		
