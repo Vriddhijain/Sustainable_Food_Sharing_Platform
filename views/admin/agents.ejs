@@ -1,15 +1,24 @@
+
+//This code is a template for an admin dashboard page that lists agents in a table format. The sidebar is included, and the dashboard table displays details such as agent names, emails, phone numbers, and the time they joined.
+
 <main>
 	<%- include('../partials/adminSidebar') %>
+//This line includes the sidebar partial (adminSidebar), which likely contains navigation links for the admin interface.
 	
 	<div id="main-wrapper">
+//The main content is wrapped inside a div with the id main-wrapper.
 		
 		<div class="bg-white shadow-sm p-3">
 			<span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
 			<h5 class="m-0 color-theme d-inline-block">Dashboard</h5>
 		</div>
+<!--A header bar containing a sidebar toggle button (with a hamburger icon) and a title for the page (Dashboard).
+The bg-white shadow-sm p-3 class provides styling with a white background, a subtle shadow, and padding.-->
 		
 		<div class="col col-sm-10 col-12 m-auto my-4" style="max-height: 75%; overflow: auto;">
 			<table class="table table-info table-striped table-hover m-0 bg-white">
+<!--This section contains the table that lists agents. The container has styles to ensure the table takes up to 75% height and allows scrolling (overflow: auto) if content exceeds this limit.
+The table has several Bootstrap classes like table-info, table-striped, table-hover, and bg-white, which add various styles to the table.-->
 				<thead>
 					<tr>
 						<th scope="col">#</th>
@@ -19,6 +28,7 @@
 						<th scope="col">Joined time</th>
 					</tr>
 				</thead>
+<!--The table headers define the columns for the agent information: a sequential number, the agent's name, email, phone number, and the time they joined.-->
 				<tbody>
 					<% for(let i=0; i<agents.length; i++) { %>
 						<tr>
@@ -29,6 +39,9 @@
 							<td> <%= agents[i].joinedTime.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short"}) %> </td>
 					<% } %>
 				</tbody>
+<!--This part dynamically populates the table rows with agent data using server-side templating.
+The agents array is looped over, and for each agent, their details (name, email, phone, and joined time) are displayed in the table.
+The joinedTime is formatted using toLocaleString with the "en-IN" locale, which specifies a date style of "medium" (e.g., Oct 17, 2024) and a time style of "short" (e.g., 2:30 PM).-->
 			</table>
 		</div>
 		
