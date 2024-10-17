@@ -7,9 +7,22 @@
 			<span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
 			<h5 class="m-0 color-theme d-inline-block">Pending Donations</h5>
 		</div>
+<!--This section represents the header area of the page. It includes:
+A toggle button (hamburger menu icon) for collapsing or expanding the sidebar (id="sidebar-toggler-btn").
+A title, "Pending Donations," indicating that the page lists donations that are in a pending status.-->
 		
 		<div class="col col-sm-10 col-12 m-auto my-4" style="max-height: 75%; overflow: auto;">
+<!--This div creates a container for the table. It ensures:
+The container takes up a reasonable portion of the screen (col-sm-10 col-12 m-auto), meaning it spans 10 columns in small screens and 12 columns in extra-small screens.
+A vertical scrollbar is added (max-height: 75%; overflow: auto;) to make the table scrollable if there are many pending donations.-->
+
 			<table class="table table-info table-striped table-hover m-0 bg-white">
+<!--The table is styled using Bootstrap classes:
+table-info: Adds a light blue background for the table header.
+table-striped: Alternates row background colors for better readability.
+table-hover: Adds a hover effect to each row.
+bg-white: Ensures the table has a white background.
+m-0: Removes any margin from the table element.-->
 				<thead>
 					<tr>
 						<th scope="col">#</th>
@@ -24,11 +37,19 @@
 					<% for(let i=0; i<pendingDonations.length; i++) { %>
 						<tr>
 							<th scope="row"> <%= i+1 %> </th>
+<!--The i+1 ensures that the serial number starts from 1 (since i is 0-based in the loop).
+scope="row" ensures proper semantics, indicating that this is the header for the current row.-->
 							<td> <%= pendingDonations[i].donor.firstName + " " + pendingDonations[i].donor.lastName %> </td>
 							<td> <%= pendingDonations[i].foodType %> </td>
+<!--Shows the type of food being donated, taken from foodType.-->
 							<td> <%= pendingDonations[i].quantity %> </td>
+<!--Displays the quantity of food donated, taken from quantity.-->
 							<td class="fw-bold text-<%= pendingDonations[i].status %>"> <%= pendingDonations[i].status %> </td>
+<!--This column displays the current status of the donation.
+The text's color and appearance are dynamically set based on the status value by adding a class text-<%= pendingDonations[i].status %>, which applies specific text color (like text-danger for "rejected", text-success for "accepted", etc.) depending on the status.-->
 							<td><a href="/admin/donation/view/<%= pendingDonations[i]._id %>" class="btn">View</a></td>
+<!--This provides a "View" button for each donation.
+Clicking the "View" button will direct the admin to a detailed view page for the specific donation. The href contains a dynamic URL that includes the donation's unique _id (retrieved from the pendingDonations array), which the backend will use to render the appropriate page.-->
 						</tr>
 					<% } %>
 				</tbody>
