@@ -23,22 +23,22 @@
 			<input type="text" name="firstName" class="form-control" id="first-name" placeholder="Enter first name.." value="<%= typeof firstName != 'undefined' ? firstName : '' %>" required autofocus>
 		</div>
 <!--The input's value attribute uses the <%= %> syntax to prefill the field with firstName if it's defined-->
-//The required attribute ensures that this field must be filled out.
-//The autofocus attribute focuses the first name field when the page loads.		
+<!--The required attribute ensures that this field must be filled out.-->
+<!--The autofocus attribute focuses the first name field when the page loads.-->		
 		<div class="mb-3">
 			<label for="last-name" class="form-label">Last name</label>
 			<input type="text" name="lastName" class="form-control" id="last-name" placeholder="Enter last name.." value="<%= typeof lastName != 'undefined' ? lastName : '' %>" required>
 		</div>
-//Similar to the first name field, it dynamically inserts the lastName if available.
-//The required attribute ensures the field must be filled.		
+<!--Similar to the first name field, it dynamically inserts the lastName if available.-->
+<!--The required attribute ensures the field must be filled.-->	
 		<div class="mb-3">
 			<label for="email" class="form-label">Email address</label>
 			<input type="email" name="email" class="form-control" id="email" placeholder="Enter email.." value="<%= typeof email != 'undefined' ? email : '' %>" required>
 			<div class="form-text">We'll never share your email with anyone else.</div>
 		</div>
-//The input type is email, which validates that the entered value is in an email format.
-//A dynamic value for the email is prefilled similarly to the previous fields.
-//The form includes helper text to inform the user about the privacy of their email address.
+<!--The input type is email, which validates that the entered value is in an email format.-->
+<!--A dynamic value for the email is prefilled similarly to the previous fields.-->
+<!--The form includes helper text to inform the user about the privacy of their email address.-->
 		<div class="mb-3">
 			<label for="password1" class="form-label">Password</label>
 			<input type="password" name="password1" class="form-control" id="password1" placeholder="Enter password.." value="<%= typeof password1 != 'undefined' ? password1 : '' %>" required>
@@ -48,9 +48,9 @@
 			<label for="password2" class="form-label">Confirm Password</label>
 			<input type="password" name="password2" class="form-control" id="password2" placeholder="Re-enter password.." value="<%= typeof password2 != 'undefined' ? password2 : '' %>" required>
 		</div>
-//The password1 and password2 values are prefilled dynamically (if the server passes them back, perhaps after form submission).
-//Both fields are required to prevent submission of incomplete forms.
-//Note: You may want to add client-side JavaScript to validate that both passwords match before form submission.
+<!--The password1 and password2 values are prefilled dynamically (if the server passes them back, perhaps after form submission).-->
+<!--Both fields are required to prevent submission of incomplete forms.-->
+<!--Note: You may want to add client-side JavaScript to validate that both passwords match before form submission.-->
 		<div class="mb-3">
 			<label for="role" class="form-label">Signup as</label>
 			<select class="form-select" name="role" id="role">
@@ -59,16 +59,17 @@
 				<option value="admin">Admin</option>
 			</select>
 		</div>
-//This select element allows the user to choose their role from three options: Donor, Agent, or Admin.
-//You might want to handle role-based access control or permissions based on the selected role.
+<!--This select element allows the user to choose their role from three options: Donor, Agent, or Admin.-->
+<!--You might want to handle role-based access control or permissions based on the selected role.-->
 		
 		<button type="submit" class="btn d-block m-auto mt-4">Submit</button>
 		
-//This button submits the form, and it’s styled to center itself on the page using utility classes (d-block, m-auto, and mt-4).		
+<!--This button submits the form, and it’s styled to center itself on the page using utility classes (d-block, m-auto, and mt-4).-->	
 		<div class="mt-3">
 			<span>Already have an account?</span>
 			<a href="/auth/login">Login here</a>
-//If the user already has an account, they are provided a link to the login page (/auth/login).		</div>
+<!--If the user already has an account, they are provided a link to the login page (/auth/login).-->
+</div>
 		
 	</form>
 </div>
