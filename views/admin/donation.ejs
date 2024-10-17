@@ -13,6 +13,7 @@
 				<span>Donor Name:</span>
 				<span><%= donation.donor.firstName + " " + donation.donor.lastName %></span>
 			</div>
+<!--Displays the full name of the donor-->
 			
 			<div class="mb-2">
 				<span>Food type:</span>
@@ -23,11 +24,13 @@
 				<span>Quantity:</span>
 				<span><%= donation.quantity %></span>
 			</div>
+<!--Shows the type of food being donated and the quantity.-->
 			
 			<div class="mb-2">
 				<span>Time of cooking:</span>
 				<span><%= donation.cookingTime.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short"}) %></span>
 			</div>
+<!--Uses toLocaleString to format the cooking time in the desired locale and format.-->
 			
 			<div class="mb-2">
 				<span>Address to collect:</span>
@@ -38,6 +41,7 @@
 				<span>Phone:</span>
 				<span><%= donation.phone %></span>
 			</div>
+<!--Displays the address where the donation should be collected and the donor's contact number.-->
 			
 			<% if(donation.donorToAdminMsg != "") { %>
 				<div class="mb-2">
@@ -45,18 +49,20 @@
 					<div class="ms-3"><%= donation.donorToAdminMsg %></div>
 				</div>
 			<% } %>
+<!--If the donor has left a message, it is displayed in this section. The condition ensures the message is shown only if it's present.-->
 				
 			<div class="mb-2">
 				<span>Status:</span>
 				<span class="fw-bold text-<%= donation.status %>"><%= donation.status %></span>
 			</div>
-			
+<!--Shows the status of the donation (e.g., pending, accepted, assigned, or collected). The status text is styled dynamically using Bootstrap classes based on the status value.-->
 			<% if(donation.status == "assigned") { %>
 				<div class="mb-2">
 					<span>Agent assigned:</span>
 					<span><%= donation.agent.firstName + " "  + donation.agent.lastName %></span>
 				</div>
 			<% } %>
+<!--Agent Assigned: If the donation has been assigned to an agent, the agent's name is displayed:-->
 			
 			<% if(donation.status == "assigned" && donation.adminToAgentMsg != "") { %>
 				<div class="mb-2">
@@ -64,6 +70,7 @@
 					<div class="ms-3"><%= donation.adminToAgentMsg %></div>
 				</div>
 			<% } %>
+<!--Message to Agent: If there's a message from the admin to the agent, it is shown:-->
 			
 			<% if(donation.status == "collected") { %>
 				<div class="mb-2">
@@ -71,6 +78,7 @@
 					<span><%= donation.collectionTime.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short"}) %></span>
 				</div>
 			<% } %>
+<!--Collection Time: If the donation has been collected, the collection time is displayed:-->
 			
 			
 			<div class="mt-4">
